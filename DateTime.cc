@@ -32,12 +32,16 @@ bool DateTime::lessThan(DateTime& d){
 string DateTime::getFormattedDateTime(){
     string formatted;
     
-
-
+    formatted += Month(month) + ", ";
+    formatted += day + ", ";
+    formatted += year +", ";
+    formatted += hour + ":";
+    formatted += minute + ":";
+    formatted += second;
 
     return formatted;
 }
 
-void DateTime::print(){
+// void DateTime::print(){
     
-}
+// }

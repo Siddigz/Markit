@@ -10,11 +10,27 @@ class Mark{
         int outof;
 
     public:
-        Mark();
-        Mark(int mark, int outof);
-        void print();
-        void changeMark(int newMark);
-        void changeOutOf(int newOutOf);
+        Mark(){
+            mark = 0;
+            outof = 0;
+        }
+
+        Mark(int mark, int outof){
+            this->mark = mark;
+            this->outof = outof;
+        }
+
+        void print(){
+            cout << "Mark: " << mark << " out of " << outof << endl;
+        }
+
+        void changeMark(int newMark){
+            this->mark = newMark;
+        }
+
+        void changeOutOf(int newOutOf){
+            this->outof = newOutOf;
+        }
 
 };
 

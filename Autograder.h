@@ -2,9 +2,9 @@
 #define AUTOGRADER_H
 
 using namespace std;
-#include <defs.h>
 #include <string.h>
-#include <Mark.h>
+#include "Mark.h"
+#include "defs.h"
 
 class Autograder{
     private:

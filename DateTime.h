@@ -15,7 +15,7 @@ class DateTime{
         bool equals(DateTime& d);
         bool lessThan(DateTime& d);
         string getFormattedDateTime();
-        void print();
+        // void print();
 
 };
 
