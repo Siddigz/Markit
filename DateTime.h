@@ -1,6 +1,5 @@
 #ifndef DATETIME_H
 #define DATETIME_H
-#include <string.h>
 #include <string>
 
 using namespace std;
@@ -20,19 +19,5 @@ class DateTime{
 };
 
 
-enum Month{
-    January,
-    February,
-    March,
-    April,
-    May,
-    June,
-    July,
-    August,
-    September,
-    October,
-    November,
-    December
-};
 
 #endif

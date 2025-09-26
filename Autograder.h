@@ -1,8 +1,8 @@
 #ifndef AUTOGRADER_H
 #define AUTOGRADER_H
+#include <string>
 
 using namespace std;
-#include <string.h>
 #include "Mark.h"
 #include "defs.h"
 

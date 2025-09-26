@@ -23,21 +23,15 @@ bool DateTime::equals(DateTime& d){
 }
 
 bool DateTime::lessThan(DateTime& d){
-    if(year < d.year || month < d.month || day < d.month || hour < d.hour || minute < d.minute || second < d.second){
+    if(year < d.year || month < d.month || day < d.day || hour < d.hour || minute < d.minute || second < d.second){
         return true;
     }
     return false;
 }
 
 string DateTime::getFormattedDateTime(){
-    string formatted;
-    
-    formatted += Month(month) + ", ";
-    formatted += day + ", ";
-    formatted += year +", ";
-    formatted += hour + ":";
-    formatted += minute + ":";
-    formatted += second;
+    string formatted = "(" + to_string(year) + "/" +  to_string(month) + "/" +  to_string(day) + " " +  to_string(hour) + ":" +  to_string(minute) + ":" +  to_string(second) + ")";
+    // string formatted = std::format("({year}/{month}/{day} {hour}:{minute}:{second})");
 
     return formatted;
 }

@@ -1,31 +1,25 @@
+#observe - Linux is case sensitive. These names should match your filenames exactly
 
-OBJ = Assignment.o Autograder.o DateTime.o main.o Submission.o SubmissionServer.o Tester.o
-
-all: a1
-
-a1: ${OBJ}
-	g++ -o a1 ${OBJ}
-
-Assignment.o: defs.h Assignment.h Assignment.cc Autograder.h
-	g++ -c Assignment.cc
-
-Autograder.o: defs.h Autograder.h Autograder.cc Submission.h Mark.h
-	g++ -c Autograder.cc
-
-DateTime.o: defs.h DateTime.h DateTime.cc
-	g++ -c DateTime.cc
-
-Submission.o: defs.h Submission.h Submission.cc DateTime.h Mark.h
-	g++ -c Submission.cc
-
-SubmissionServer.o: defs.h SubmissionServer.h SubmissionServer.cc Assignments.h Submissions.h
-	g++ -c SubmissionServer.cc
-
-Tester.o: defs.h Tester.h Tester.cc Assignment.h Autograder.h DateTime.h Mark.h Submission.h Submission.h SubmissionServer.h tester.h
-	g++ -c Tester.cc
-
-main.o: defs.h Assignment.h Autograder.h DateTime.h Mark.h Submission.h Submission.h SubmissionServer.h
-	g++ -c main.cc
+all: test
 	
+test: test.o Tester.o Autograder.o Mark.o DateTime.o# add object files here and in the command below
+	g++ -o test test.o Tester.o Autograder.o Mark.o DateTime.o
+		
+test.o: test.cc 
+	g++ -c test.cc
+
+Tester.o: Tester.h Tester.cc
+	g++ -c -g Tester.cc
+
+# add your own classes
+Autograder.o: Autograder.h Autograder.cc
+	g++ -c -g -Wall Autograder.cc
+
+Mark.o: Mark.h Mark.cc
+	g++ -c -g -Wall Mark.cc
+
+DateTime.o: DateTime.h DateTime.cc
+	g++ -c -g -Wall DateTime.cc
+
 clean:
-	rm -f a1 ${OBJ}
+	rm -f test *.o
