@@ -23,6 +23,7 @@ bool DateTime::equals(DateTime& d){
 }
 
 bool DateTime::lessThan(DateTime& d){
+    // Checks if each elements is less than that of the other DateTime object
     if (year != d.year) return year < d.year;
     if (month != d.month) return month < d.month;
     if (day != d.day) return day < d.day;

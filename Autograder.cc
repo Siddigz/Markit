@@ -25,6 +25,5 @@ void Autograder::mark(string output, Mark& mark){
             grade += marks[i];
         }
     }
-
     mark.changeMark(grade);
 }
