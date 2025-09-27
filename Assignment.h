@@ -10,7 +10,7 @@
 using namespace std;
 class Assignment{
     private:
-        int assign_number;
+        int assignNumber;
         string description;
         DateTime dueDate;
         DateTime lateDueDate;
@@ -20,9 +20,9 @@ class Assignment{
 
     public:
         Assignment();
-        Assignment(int assign_number, string description, DateTime& dueDate, DateTime& lateDueDate, Autograder& grader, Submission& submissions, int submissionsCount);
-        bool addSubmission(int sID, string output, DateTime& date, Submission& submission);
-        bool removeSubmission(int sID, DateTime& date, Submission& submission);
+        Assignment(int assignNumber, string description, DateTime& dueDate, DateTime& lateDueDate, Autograder& grader);
+        bool addSubmission(int sID, string output, DateTime& date);
+        bool removeSubmission(int sID, DateTime& date);
         int getAssignmentNumber();
         DateTime getDueDate();
         DateTime getLateDueDate();
