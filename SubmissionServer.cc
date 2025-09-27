@@ -13,12 +13,13 @@ bool SubmissionServer::addAssignment(int assignNum, string desc, DateTime& due,
     Assignment assignment(assignNum, desc, due, lateDue, grader);
     assignments[assignCount] = assignment;
     assignCount++;
+    return true;
 };
 
 bool SubmissionServer::removeAssignment(int assignNum){
     for(int i = 0; i < assignCount; i++){
         if(assignments[i].getAssignmentNumber() == assignNum){
-            for(int n = i; n < assignCount; n++){
+            for(int n = i; n < assignCount -1; n++){
                 assignments[n] = assignments[n+1];
             }
             assignCount--;
@@ -62,5 +63,7 @@ void SubmissionServer::printSubmissions(int assignNum){
 };
 
 void SubmissionServer::printSubmissionsByStudent(int sID){
-
+    for(int i = 0; i < assignCount; i++){
+        assignments[i].printSubmissionsByStudent(sID);
+    }
 };

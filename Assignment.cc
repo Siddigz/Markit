@@ -32,7 +32,7 @@ bool Assignment::addSubmission(int sID, string output, DateTime& date){
 bool Assignment::removeSubmission(int sID, DateTime& date){
     for(int i = 0; i < submissionsCount; i++){
         if(submissions[i].getStudentNumber() == sID && submissions[i].getSubmissionTime().equals(date)){
-            for(int n = i; n < submissionsCount; n++){
+            for(int n = i; n < submissionsCount -1; n++){
                 submissions[n] = submissions[n+1];
             }
 
@@ -82,12 +82,11 @@ void Assignment::printLateSubmissions(){
     }
 }
 
-void Assignment::printSubmissionByStudent(int sID){
+void Assignment::printSubmissionsByStudent(int sID){
     for(int i = 0; i < submissionsCount; i++){
         if(submissions[i].getStudentNumber() == sID){
             submissions[i].print();
         }
-        break;
     }
 }
 

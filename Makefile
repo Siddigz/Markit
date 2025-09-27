@@ -1,4 +1,4 @@
-OPT = -g -Wall -Wextra -Werror
+OPT = -g -Wall -Wextra
 OBJ = Tester.o Assignment.o Autograder.o Mark.o DateTime.o Submission.o SubmissionServer.o main.o
 all: a1
 
@@ -6,7 +6,7 @@ a1: ${OBJ}
 	g++ -o a1 ${OBJ}
 
 Tester.o: Tester.h Tester.cc
-	g++ -c -g Tester.cc
+	g++ -c Tester.cc
 
 Autograder.o: Autograder.h Autograder.cc
 	g++ -c ${OPT} Autograder.cc

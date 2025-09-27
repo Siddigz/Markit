@@ -33,7 +33,7 @@ bool Submission::equals(int sID, DateTime& submissionDate){
 };
 
 void Submission::print(){
-    cout << "Submission by " << sID << " on " << submissionDate.getFormattedDateTime() << endl;
+    cout << "\nSubmission by " << sID << " on " << submissionDate.getFormattedDateTime() << endl;
     mark.print();
-    cout << output;
+    cout << output << endl << endl;
 };

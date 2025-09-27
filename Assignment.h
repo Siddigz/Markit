@@ -29,7 +29,7 @@ class Assignment{
         void print();
         void printAllSubmissions();
         void printLateSubmissions();
-        void printSubmissionByStudent(int sID);
+        void printSubmissionsByStudent(int sID);
 
 };
 
