@@ -1,5 +1,5 @@
 OPT = -g -Wall
-OBJ = Tester.o Autograder.o Mark.o DateTime.o Submission.o Assignment.o SubmissionServer.o main.o
+OBJ = Tester.o Assignment.o Autograder.o Mark.o DateTime.o Submission.ox SubmissionServer.o main.o
 all: a1
 
 a1: ${OBJ}
