@@ -23,10 +23,13 @@ bool DateTime::equals(DateTime& d){
 }
 
 bool DateTime::lessThan(DateTime& d){
-    if(year < d.year || month < d.month || day < d.day || hour < d.hour || minute < d.minute || second < d.second){
-        return true;
-    }
-    return false;
+    if (year != d.year) return year < d.year;
+    if (month != d.month) return month < d.month;
+    if (day != d.day) return day < d.day;
+    if (hour != d.hour) return hour < d.hour;
+    if (minute != d.minute) return minute < d.minute;
+    if (second != d.second) return second < d.second;
+    return true;
 }
 
 string DateTime::getFormattedDateTime(){

@@ -1,6 +1,7 @@
 #ifndef ASSIGNMENT_H
 #define ASSIGNMENT_H
 
+#include <iostream>
 #include <string>
 #include "DateTime.h"
 #include "Autograder.h"

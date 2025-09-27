@@ -32,10 +32,9 @@ bool Assignment::addSubmission(int sID, string output, DateTime& date){
 bool Assignment::removeSubmission(int sID, DateTime& date){
     for(int i = 0; i < submissionsCount; i++){
         if(submissions[i].getStudentNumber() == sID && submissions[i].getSubmissionTime().equals(date)){
-            for(int n = i; n < submissionsCount -1; n++){
+            for(int n = i; n < submissionsCount - 1; n++){
                 submissions[n] = submissions[n+1];
             }
-
             submissionsCount--;
             return true;
         }
@@ -65,7 +64,7 @@ void Assignment::print(){
     cout << "Description:" << description << endl;
     cout << "Due Date:  " << dueDate.getFormattedDateTime() << endl;
     cout << "Late Due Date: " << lateDueDate.getFormattedDateTime() << endl;
-    cout << "Number of Submissions: " << submissionsCount << endl;
+    cout << "Number of Submissions: " << submissionsCount << endl << endl;
 }
 
 void Assignment::printAllSubmissions(){

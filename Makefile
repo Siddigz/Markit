@@ -1,4 +1,4 @@
-OPT = -g -Wall -Wextra
+OPT = -g
 OBJ = Tester.o Assignment.o Autograder.o Mark.o DateTime.o Submission.o SubmissionServer.o main.o
 all: a1
 
