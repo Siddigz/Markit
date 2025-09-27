@@ -16,7 +16,7 @@ DateTime::DateTime(int year, int month, int day, int hour, int minute, int secon
 
 
 bool DateTime::equals(DateTime& d){
-    if(year == d.year && month == d.month && day == d.month && hour == d.hour && minute == d.minute && second == d.second){
+    if(year == d.year && month == d.month && day == d.day && hour == d.hour && minute == d.minute && second == d.second){
         return true;
     }
     return false;
@@ -29,7 +29,7 @@ bool DateTime::lessThan(DateTime& d){
     if (hour != d.hour) return hour < d.hour;
     if (minute != d.minute) return minute < d.minute;
     if (second != d.second) return second < d.second;
-    return true;
+    return false;
 }
 
 string DateTime::getFormattedDateTime(){

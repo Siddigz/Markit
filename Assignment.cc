@@ -61,7 +61,7 @@ void Assignment::print(){
 // Late Due Date: December 22, 2025, 12:59:58
 // Number of Submissions: 40
     cout << "Assignment Number: " << assignNumber << endl;
-    cout << "Description:" << description << endl;
+    cout << "Description: " << description << endl;
     cout << "Due Date:  " << dueDate.getFormattedDateTime() << endl;
     cout << "Late Due Date: " << lateDueDate.getFormattedDateTime() << endl;
     cout << "Number of Submissions: " << submissionsCount << endl << endl;
@@ -75,7 +75,8 @@ void Assignment::printAllSubmissions(){
 
 void Assignment::printLateSubmissions(){
     for(int i = 0; i < submissionsCount; i++){
-        if(!submissions[i].getSubmissionTime().lessThan(dueDate)){
+        DateTime submissionDate = submissions[i].getSubmissionTime();
+        if(dueDate.lessThan(submissionDate)){
             submissions[i].print();
         }
     }
