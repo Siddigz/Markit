@@ -4,6 +4,12 @@ An assignment submission server and autograder in C++. Instructors create assign
 date, a late due date and a marking scheme. Students submit their program's output, and Markit
 grades each submission automatically and keeps it with its timestamp and mark.
 
+![The demo grading four submissions: 10/10, 8/10 for a memory leak, 5/10 for a late submission with a failed delete, and one rejected after the late due date](docs/grading.png)
+
+`./demo` ([demo.cc](demo.cc)) sets up one assignment with a marking scheme and submits four
+outputs through `SubmissionServer`. Each is graded as it arrives, and the one after the late due date
+is rejected.
+
 ## How it works
 
 - **`SubmissionServer`** holds every assignment. You can add and remove assignments and submissions,
@@ -63,7 +69,8 @@ classDiagram
 
 ```bash
 make
-./a1
+./demo   # grade a few sample submissions
+./a1     # run the test suites
 ```
 
 `./a1` opens a menu of test suites that exercise every class. Option 6 runs everything:

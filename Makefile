@@ -1,6 +1,7 @@
 OPT = -g
+LIB = Assignment.o Autograder.o Mark.o DateTime.o Submission.o SubmissionServer.o
 OBJ = Tester.o Assignment.o Autograder.o Mark.o DateTime.o Submission.o SubmissionServer.o main.o
-all: a1
+all: a1 demo
 
 a1: ${OBJ}
 	g++ -o a1 ${OBJ}
@@ -26,8 +27,14 @@ Assignment.o: Assignment.h Assignment.cc
 SubmissionServer.o: SubmissionServer.h SubmissionServer.cc
 	g++ -c ${OPT} SubmissionServer.cc
 
+demo: demo.o ${LIB}
+	g++ -o demo demo.o ${LIB}
+
+demo.o: demo.cc
+	g++ -c ${OPT} demo.cc
+
 main.o: main.cc
 	g++ -c ${OPT} main.cc 
 
 clean:
-	rm -f a1 ${OBJ}
+	rm -f a1 demo demo.o ${OBJ}
